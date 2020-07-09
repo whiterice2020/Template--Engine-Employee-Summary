@@ -1,29 +1,84 @@
+// Sub Classes
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+// Dependancies
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-
+// Others
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
+const employeeArray = [];
 const render = require("./lib/htmlRenderer");
+const { endianness } = require("os");
 
-const initialQuestion = [
-    {
-        type: "input",
-        name: "job",
-        choices: [
-            "Manager",
-            "Engineer",
-            "Intern",
-        ]
-      },
+// Questions to employee title
+function addEmployee() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                name: "title",
+                message: "Choose the job title for the employee you are adding",
+                choices: [
+                    "Manager",
+                    "Engineer",
+                    "Intern",
+                ]
+            };
+        ]).then function answers() {
+        if (answers.name === "Manager") {
+            addManager();
+        } else if (answers.name === "Engineer") {
+            addEngineer();
+        } else if (answers.name === "Intern") {
+            addIntern();
+        } else {
+            complete();
+        }
+    }
+}
 
-]
+// Manager Questions
+function addManager() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "managerName",
+            message: "What is the manager's name?"
+        },
+        {
+            type: "input",
+            name: "managerID",
+            message: "What is the managers's ID?"
+        },
+        {
+            type: "input",
+            name: "managerEmail",
+            message: "What is the managers's email?"
+        },
+        {
+            type: "input",
+            name: "managerOfficeNumber",
+            message: "What is the managers's email?"
+        },
+    ])
+}
 
-inquirer.prompt(initialQuestion);
+// Engineer Questions
+function addEngineer() {
+
+}
+// Intern Questions
+function addIntern() {
+
+}
+
+
+
+
+// inquirer.prompt(initialQuestion);
 
 
 // Write code to use inquirer to gather information about the development team members,
