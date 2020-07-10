@@ -11,7 +11,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const employeeArray = [];
 const render = require("./lib/htmlRenderer");
-const { endianness } = require("os");
+// const { endianness } = require("os");
 
 // Questions to employee title
 function addEmployee() {
@@ -69,7 +69,7 @@ function addManager() {
         employeeArray.push(mgr);
         addEmployee();
     });
-
+    }
     // Engineer Questions
     function addEngineer() {
         inquirer
