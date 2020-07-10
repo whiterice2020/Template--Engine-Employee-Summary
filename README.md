@@ -40,6 +40,7 @@
 
   # Images
   [![Demo Video](./Assets/image1.jpg)]
+  [![Demo Video](./Assets/image2.jpg)]
   # Video
     place video here
   
