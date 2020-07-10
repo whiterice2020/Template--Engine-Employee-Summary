@@ -26,18 +26,19 @@ function addEmployee() {
                     "Engineer",
                     "Intern",
                 ]
-            };
-        ]).then function answers() {
-        if (answers.name === "Manager") {
-            addManager();
-        } else if (answers.name === "Engineer") {
-            addEngineer();
-        } else if (answers.name === "Intern") {
-            addIntern();
-        } else {
-            complete();
+            },
+        ]).then(function (answers) {
+            if (answers.name === "Manager") {
+                addManager();
+            } else if (answers.name === "Engineer") {
+                addEngineer();
+            } else if (answers.name === "Intern") {
+                addIntern();
+            } else {
+                complete();
+            }
         }
-    }
+        )
 }
 
 // Manager Questions
@@ -63,61 +64,71 @@ function addManager() {
             name: "managerOfficeNumber",
             message: "What is the managers's Office Number?",
         },
-    ]).then addEmployee();
-}
+    ]).then(function (answers) {
+        const mgr = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.managerOfficeNumber);
+        employeeArray.push(mgr);
+        addEmployee();
+    });
 
-// Engineer Questions
-function addEngineer() {
-    inquirer
-        .prompt([
-            {
-                type: "input",
-                name: "engineerName",
-                message: "What is the engineer's name?",
-            },
-            {
-                type: "input",
-                name: "engineerID",
-                message: "What is the engineer's ID?",
-            },
-            {
-                type: "input",
-                name: "engineerEmail",
-                message: "What is the engineer's email?",
-            },
-            {
-                type: "input",
-                name: "engineerGitHub",
-                message: "What is the engineer's GitHub Username?",
-            },
-        ]).then addEmployee();
-}
-// Intern Questions
-function addIntern() {
-    inquirer
-        .prompt([
-            {
-                type: "input",
-                name: "internName",
-                message: "What is the Intern's name?",
-            },
-            {
-                type: "input",
-                name: "internID",
-                message: "What is the intern's ID?",
-            },
-            {
-                type: "input",
-                name: "internEmail",
-                message: "What is the intern's email?",
-            },
-            {
-                type: "input",
-                name: "internSchool",
-                message: "What is the intern's school they graduated from?",
-            },
-        ]).then addEmployee();
-}
+    // Engineer Questions
+    function addEngineer() {
+        inquirer
+            .prompt([
+                {
+                    type: "input",
+                    name: "engineerName",
+                    message: "What is the engineer's name?",
+                },
+                {
+                    type: "input",
+                    name: "engineerID",
+                    message: "What is the engineer's ID?",
+                },
+                {
+                    type: "input",
+                    name: "engineerEmail",
+                    message: "What is the engineer's email?",
+                },
+                {
+                    type: "input",
+                    name: "engineerGitHub",
+                    message: "What is the engineer's GitHub Username?",
+                },
+            ]).then(function (answers) {
+                const eng = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
+                employeeArray.push(eng);
+                addEmployee();
+                // })
+            });
+        // Intern Questions
+        function addIntern() {
+            inquirer
+                .prompt([
+                    {
+                        type: "input",
+                        name: "internName",
+                        message: "What is the Intern's name?",
+                    },
+                    {
+                        type: "input",
+                        name: "internID",
+                        message: "What is the intern's ID?",
+                    },
+                    {
+                        type: "input",
+                        name: "internEmail",
+                        message: "What is the intern's email?",
+                    },
+                    {
+                        type: "input",
+                        name: "internSchool",
+                        message: "What is the intern's school they graduated from?",
+                    },
+                ]).then(function (answers) {
+                    const int = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
+                    employeeArray.push(int);
+                    addEmployee();
+                }
 
 
 
