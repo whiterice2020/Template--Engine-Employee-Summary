@@ -39,7 +39,7 @@
   This application can be used for a company who would like to build out teams which lists Managers, Engineers, and Interns
 
   # Images
-  [![Demo Video](./Assets/image1.jpg)](https://www.youtube.com/watch?v=YFTK1WGIanE "Click here to watch the demo!")
+  [![Demo Video](./Assets/image1.jpg)]
   # Video
     place video here
   
