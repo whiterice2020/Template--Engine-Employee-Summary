@@ -42,7 +42,7 @@
   [![Demo Video](./Assets/image1.jpg)]
   [![Demo Video](./Assets/image2.jpg)]
   # Video
-    place video here
+  [![Demo Video](./Assets/image2.jpg)](https://youtu.be/VFepHQYjk_U "Click here to watch the demo!")
   
 
   # License
