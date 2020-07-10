@@ -39,8 +39,7 @@
   This application can be used for a company who would like to build out teams which lists Managers, Engineers, and Interns
 
   # Images
-    place image here
-  
+    ![image1](https://user-images.githubusercontent.com/66220747/87114773-6adfc700-c23f-11ea-9e05-474e6fdcea88.jpg)
   # Video
     place video here
   
