@@ -98,37 +98,53 @@ function addManager() {
                 const eng = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
                 employeeArray.push(eng);
                 addEmployee();
-                // })
             });
-        // Intern Questions
-        function addIntern() {
-            inquirer
-                .prompt([
-                    {
-                        type: "input",
-                        name: "internName",
-                        message: "What is the Intern's name?",
-                    },
-                    {
-                        type: "input",
-                        name: "internID",
-                        message: "What is the intern's ID?",
-                    },
-                    {
-                        type: "input",
-                        name: "internEmail",
-                        message: "What is the intern's email?",
-                    },
-                    {
-                        type: "input",
-                        name: "internSchool",
-                        message: "What is the intern's school they graduated from?",
-                    },
-                ]).then(function (answers) {
-                    const int = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
-                    employeeArray.push(int);
-                    addEmployee();
-                }
+    }
+    // Intern Questions
+    function addIntern() {
+        inquirer
+            .prompt([
+                {
+                    type: "input",
+                    name: "internName",
+                    message: "What is the Intern's name?",
+                },
+                {
+                    type: "input",
+                    name: "internID",
+                    message: "What is the intern's ID?",
+                },
+                {
+                    type: "input",
+                    name: "internEmail",
+                    message: "What is the intern's email?",
+                },
+                {
+                    type: "input",
+                    name: "internSchool",
+                    message: "What is the intern's school they graduated from?",
+                },
+            ]).then(function (answers) {
+                const int = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
+                employeeArray.push(int);
+                addEmployee();
+            })
+    }
+
+// Write Data
+function complete() {
+    console.log("You have completed adding your employees.");
+    
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -158,6 +174,3 @@ function addManager() {
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
-
-
-
