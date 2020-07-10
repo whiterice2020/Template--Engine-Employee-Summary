@@ -35,6 +35,8 @@ function addEmployee() {
                 addEngineer();
             } else if (answers.title === "Intern") {
                 addIntern();
+            } else if (answers.title === "No More Employees to add") {
+                
             }
             
         }
