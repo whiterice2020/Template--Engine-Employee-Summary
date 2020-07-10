@@ -42,6 +42,8 @@
   [![Demo Video](./Assets/image1.jpg)]
   [![Demo Video](./Assets/image2.jpg)]
   # Video
+  Click the image below to watch a demo Video
+  
   [![Demo Video](./Assets/image2.jpg)](https://youtu.be/VFepHQYjk_U "Click here to watch the demo!")
   
 
