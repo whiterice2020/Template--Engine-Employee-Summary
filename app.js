@@ -35,10 +35,10 @@ function addEmployee() {
                 addEngineer();
             } else if (answers.title === "Intern") {
                 addIntern();
-            } else if (answers.title === "No More Employees to add") {
-                
-            }
-            
+            } else {
+                callRender()
+            } 
+
         }
         )
 }
@@ -131,6 +131,15 @@ function addIntern() {
             employeeArray.push(int);
             addEmployee();
         })
+}
+
+function callRender() {
+
+    const renderHTML = render(employeeArray);
+
+    fs.writeFile(outputPath, renderHTML, (err)=>{
+        console.log("Finished Creating Employees")
+    })
 }
 
 addEmployee()
