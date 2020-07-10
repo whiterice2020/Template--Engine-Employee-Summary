@@ -46,33 +46,77 @@ function addManager() {
         {
             type: "input",
             name: "managerName",
-            message: "What is the manager's name?"
+            message: "What is the manager's name?",
         },
         {
             type: "input",
             name: "managerID",
-            message: "What is the managers's ID?"
+            message: "What is the managers's ID?",
         },
         {
             type: "input",
             name: "managerEmail",
-            message: "What is the managers's email?"
+            message: "What is the managers's email?",
         },
         {
             type: "input",
             name: "managerOfficeNumber",
-            message: "What is the managers's email?"
+            message: "What is the managers's Office Number?",
         },
-    ])
+    ]).then addEmployee();
 }
 
 // Engineer Questions
 function addEngineer() {
-
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "What is the engineer's name?",
+            },
+            {
+                type: "input",
+                name: "engineerID",
+                message: "What is the engineer's ID?",
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "What is the engineer's email?",
+            },
+            {
+                type: "input",
+                name: "engineerGitHub",
+                message: "What is the engineer's GitHub Username?",
+            },
+        ]).then addEmployee();
 }
 // Intern Questions
 function addIntern() {
-
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                name: "internName",
+                message: "What is the Intern's name?",
+            },
+            {
+                type: "input",
+                name: "internID",
+                message: "What is the intern's ID?",
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "What is the intern's email?",
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "What is the intern's school they graduated from?",
+            },
+        ]).then addEmployee();
 }
 
 
